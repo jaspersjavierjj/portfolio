@@ -28,10 +28,8 @@
                         <div class="nav-links">
                             <button onclick="scrollToSection('intro')" class="nav-link">Home</button>
                             <button onclick="scrollToSection('about')" class="nav-link">About</button>
-                            <button onclick="scrollToSection('techstack')" class="nav-link">Tech Stack</button>
                             <button onclick="scrollToSection('skills')" class="nav-link">Skills</button>
                             <button onclick="scrollToSection('projects')" class="nav-link">Projects</button>
-                            <button onclick="scrollToSection('hobbyprojects')" class="nav-link">Creative Projects</button>
                             <button onclick="scrollToSection('contact')" class="nav-link">Contact</button>
                         </div>
                         <!-- Dark Mode Toggle Button -->
@@ -89,37 +87,53 @@
         <section id="about" class="section about-section">
             <div class="container">
                 <div class="about-grid">
-                    <div class="about-text">
-                        <h2 class="section-title">About Me</h2>
-                        <div class="about-content">
-                            <p>
-                                Fresh graduate web developer with skills in front-end (HTML, CSS, JavaScript), UI/UX design (Figma, 
-                                Photoshop, Canva), and database management (MySQL, Firebase). With strong problem-solving skills and 
-                                attention to detail, I'm passionate about building intuitive, visually engaging applications and eager 
-                                to contribute innovative solutions in a collaborative environment.
-                            </p>
-                            <p>
-                                My journey in web development started with curiosity and has evolved into a career focused on
-                                continuous learning and innovation. I believe in writing clean, maintainable code and staying
-                                up-to-date with the latest industry trends.
-                            </p>
-                            <p class="highlight">
-                                I hold a Bachelor of Science in Information Technology with specialization in Mobile and Web Application 
-                                from National University Dasmarinas, and have earned certifications including Computer System Servicing 
-                                NC II and PMI Project Management Ready.
-                            </p>
-                        </div>
+                
+                <!-- Image on the left -->
+                <div class="about-image">
+                    <div class="image-container">
+                    <div class="image-background">
+                        <img src="assets/527798226.jpg" alt="Jasper Saldeo Javier" class="profile-image">
                     </div>
-                    <div class="about-image">
-                        <div class="image-container">
-                            <div class="image-background">
-                                <img src="professional-developer-portrait.png" alt="Jasper Saldeo Javier" class="profile-image">
-                            </div>
-                        </div>
                     </div>
+                </div>
+
+                <!-- Text on the right -->
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="about-content">
+                    <p>
+                        I’m a full-stack web developer passionate about building clean, responsive, and user-friendly web applications. With experience in both front-end (HTML, CSS, JavaScript) and back-end development, I focus on creating efficient, functional, and visually engaging solutions.
+                    </p>
+                    <p>
+                        As a recent graduate, I bring skills in UI/UX design (Figma, Photoshop, Canva) and database management (MySQL, Firebase), along with a problem-solving mindset and strong attention to detail. I’m eager to grow through real-world challenges and contribute in collaborative, tech-driven environments.
+                    </p>
+                    </div>
+
+                    <!-- Stats Boxes -->
+                    <div class="about-stats">
+                    <div class="stat-box">
+                        <div class="stat-value">5+</div>
+                        <div class="stat-label">Projects<br>Completed</div>
+                    </div>
+
+                    <div class="stat-box">
+                        <!-- you can replace this with an actual infinite icon SVG -->
+                        <div class="stat-value1">&#8734;</div> 
+                        <div class="stat-label">Passion<br>for Learning</div>
+                    </div>
+
+                    <div class="stat-box">
+                        <div class="stat-value">0+</div>
+                        <div class="stat-label">Untitled</div>
+                    </div>
+                    </div>
+                </div>
+
                 </div>
             </div>
         </section>
+
+
 
         <!-- Tech Stack Section -->
         <section id="techstack" class="section tech-stack-section">
