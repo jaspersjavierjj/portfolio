@@ -101,6 +101,10 @@
                     <div class="image-background">
                         <img src="assets/527798226.jpg" alt="Jasper Saldeo Javier" class="profile-image">
                     </div>
+                    <div class="availability-box">
+                        <span class="availability-indicator"></span>
+                        <span class="availability-text">Available for work</span>
+                    </div>
                     </div>
                 </div>
 
@@ -109,7 +113,7 @@
                     <h2 class="section-title">About Me</h2>
                     <div class="about-content">
                     <p>
-                        I’m a full-stack web developer passionate about building clean, responsive, and user-friendly web applications. With experience in both front-end (HTML, CSS, JavaScript) and back-end development, I focus on creating efficient, functional, and visually engaging solutions.
+                        I’m a Aspiring full-stack web developer passionate about building clean, responsive, and user-friendly web applications. With experience in both front-end (HTML, CSS, JavaScript) and back-end development, I focus on creating efficient, functional, and visually engaging solutions.
                     </p>
                     <p>
                         As a recent graduate, I bring skills in UI/UX design (Figma, Photoshop, Canva) and database management (MySQL, Firebase), along with a problem-solving mindset and strong attention to detail. I’m eager to grow through real-world challenges and contribute in collaborative, tech-driven environments.
@@ -162,29 +166,28 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="section projects-section">
             <div class="container">
                 <h2 class="section-title center">Featured Projects</h2>
+                <p class="section-subtitle center">
+                A showcase of my technical expertise as a fresh graduate through real-world applications and learning projects. Each project reflects my passion for continuous improvement and my commitment to building user-focused, practical solutions.                </p>
+
+                <!-- Filter Buttons -->
+                <div class="projects-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="website">Website</button>
+                    <button class="filter-btn" data-filter="webapps">Web Apps</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                </div>
+
                 <div class="projects-container">
                     <div class="projects-grid" id="projectsGrid">
-                        <!-- Projects will be populated by JavaScript -->
-                    </div>
-                    <div class="carousel-nav">
-                        <button id="prevProjects" class="carousel-btn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="15,18 9,12 15,6"></polyline>
-                            </svg>
-                        </button>
-                        <button id="nextProjects" class="carousel-btn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9,18 15,12 9,6"></polyline>
-                            </svg>
-                        </button>
+                        <!-- JS will inject project cards here -->
                     </div>
                 </div>
             </div>
         </section>
+
 
         <!-- Creative Projects Section -->
         <section id="hobbyprojects" class="section creative-projects-section">

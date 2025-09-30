@@ -142,38 +142,37 @@ const projects = [
     description: "Personal website showcasing skills and projects with modern design and smooth animations.",
     image: "modern-portfolio-website.png",
     link: "#",
+    category: "website",
   },
   {
     title: "E-commerce System",
     description: "Full-stack online store with cart functionality, payment integration, and admin dashboard.",
     image: "ecommerce-website-interface.png",
     link: "#",
+    category: "webapps",
   },
   {
     title: "Task Manager App",
     description: "Productivity app with user authentication, real-time updates, and collaborative features.",
     image: "task-management-app.png",
     link: "#",
+    category: "webapps",
   },
   {
     title: "Weather Dashboard",
     description: "Real-time weather application with location-based forecasts and interactive maps.",
     image: "weather-dashboard-interface.png",
     link: "#",
+    category: "mobile",
   },
   {
     title: "Social Media Platform",
     description: "Full-featured social platform with posts, messaging, and user profiles.",
     image: "social-media-interface.png",
     link: "#",
-  },
-  {
-    title: "Learning Management System",
-    description: "Educational platform with course management, progress tracking, and interactive content.",
-    image: "lms-interface.png",
-    link: "#",
-  },
-]
+    category: "website",
+  }
+];
 
 const creativeProjects = [
   {
@@ -325,46 +324,50 @@ function renderSkills() {
   })
 }
 
-// Projects Functions
-function renderProjects() {
-  const projectsGrid = document.getElementById("projectsGrid")
-  const visibleProjects = projects.slice(currentProjectIndex, currentProjectIndex + 3)
+function renderProjects(filter = "all") {
+  const projectsGrid = document.getElementById("projectsGrid");
+  projectsGrid.innerHTML = "";
 
-  projectsGrid.innerHTML = ""
+  const filtered = filter === "all" ? projects : projects.filter(p => p.category === filter);
 
-  visibleProjects.forEach((project) => {
-    const projectCard = document.createElement("div")
-    projectCard.className = "project-card"
-
+  filtered.forEach((project) => {
+    const projectCard = document.createElement("div");
+    projectCard.className = "project-card";
     projectCard.innerHTML = `
-            <div class="project-image-container">
-                <img src="${project.image}" alt="${project.title}" class="project-image">
-                <div class="project-overlay"></div>
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">${project.title}</h3>
-                <p class="project-description">${project.description}</p>
-                <a href="${project.link}" class="project-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15,3 21,3 21,9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    View Project
-                </a>
-            </div>
-        `
-
-    projectsGrid.appendChild(projectCard)
-  })
-
-  // Update navigation buttons
-  const prevBtn = document.getElementById("prevProjects")
-  const nextBtn = document.getElementById("nextProjects")
-
-  prevBtn.disabled = currentProjectIndex === 0
-  nextBtn.disabled = currentProjectIndex + 3 >= projects.length
+      <div class="project-image-container">
+        <img src="${project.image}" alt="${project.title}" class="project-image">
+        <div class="project-overlay"></div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">${project.title}</h3>
+        <p class="project-description">${project.description}</p>
+        <a href="${project.link}" class="project-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15,3 21,3 21,9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          View Project
+        </a>
+      </div>
+    `;
+    projectsGrid.appendChild(projectCard);
+  });
 }
+
+// Filter button clicks
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderProjects(btn.dataset.filter);
+  });
+});
+
+// Initialize
+document.addEventListener("DOMContentLoaded", () => {
+  renderProjects("all");
+});
 
 function renderCreativeProjects() {
   const creativeProjectsGrid = document.getElementById("creativeProjectsGrid")
