@@ -316,6 +316,7 @@ body {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
+  margin-top: 10rem;
   line-height: 1.2;
 }
 
@@ -432,7 +433,7 @@ body {
 }
 
 .scroll-indicator {
-  margin-top: 5rem;            /* spacing from social links */
+  margin-top: 10rem;            /* spacing from social links */
   display: flex;
   justify-content: center;
 }
