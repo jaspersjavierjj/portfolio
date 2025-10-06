@@ -170,7 +170,7 @@ const projects = [
     description: "Full-featured social platform with posts, messaging, and user profiles.",
     image: "social-media-interface.png",
     link: "#",
-    category: "website",
+    category: "webapps",
   }
 ];
 

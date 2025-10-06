@@ -271,7 +271,7 @@ body {
 .section-title {
   font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   color: var(--primary);
 }
 
@@ -835,7 +835,7 @@ body {
 
 .projects-grid {
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -886,7 +886,7 @@ body {
 }
 
 .project-content {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .project-title {
@@ -937,6 +937,7 @@ body {
   gap: 1rem;
   justify-content: center;
   margin-bottom: 2rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
 }
 
@@ -959,7 +960,7 @@ body {
 
 .projects-grid {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 @media (min-width: 768px) {
