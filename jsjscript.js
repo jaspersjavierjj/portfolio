@@ -478,3 +478,90 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 500)
 })
+
+
+const skillsData = {
+  frontend: [
+    { title: "HTML/CSS", about: "Semantic markup and modern CSS techniques", tag: "Frontend" },
+    { title: "JavaScript", about: "Modern ES6+ syntax and DOM interaction", tag: "Frontend" },
+    { title: "Bootstrap", about: "Popular CSS framework for responsive design", tag: "Frontend" },
+    { title: "Tailwind CSS", about: "Utility-first CSS framework", tag: "Frontend" },
+  ],
+  backend: [
+    { title: "Node.js", about: "Server-side runtime for scalable apps", tag: "Backend" },
+    { title: "PHP", about: "Server-side scripting language", tag: "Backend" },
+  ],
+  database: [
+    { title: "Firebase", about: "Real-time database and cloud storage", tag: "Database" },
+    { title: "MySQL", about: "Popular relational database system", tag: "Database" },
+  ],
+  tools: [
+    { title: "Git & GitHub", about: "Version control and collaboration tools", tag: "Tools" },
+    { title: "Jira", about: "Project tracking and agile management", tag: "Tools" },
+    { title: "VS Code", about: "Lightweight and extensible code editor", tag: "Tools" },
+    { title: "Figma", about: "UI/UX design and prototyping platform", tag: "Tools" },
+    { title: "Canva", about: "Online design and content creation tool", tag: "Tools" },
+    { title: "Adobe Photoshop", about: "Professional image editing software", tag: "Tools" },
+    { title: "System.io", about: "All-in-one online business platform", tag: "Tools" },
+    { title: "Sony Vegas", about: "Professional video editing software", tag: "Tools" },
+  ],
+  professional: [
+    { title: "Attention to Detail", about: "Ensures precision and consistency", tag: "Professional" },
+    { title: "Problem Solving", about: "Analytical thinking and debugging skills", tag: "Professional" },
+    { title: "Basic Networking", about: "Understands connections and protocols", tag: "Professional" },
+    { title: "APIs Integration", about: "Connecting third-party services seamlessly", tag: "Professional" },
+    { title: "Troubleshooting", about: "Diagnosing and fixing issues efficiently", tag: "Professional" },
+    { title: "Video Editor", about: "Editing and improving visual content", tag: "Professional" },
+    { title: "Web Development", about: "Building functional and responsive websites", tag: "Professional" },
+    { title: "Graphic Designer", about: "Visual content creation and layout design", tag: "Professional" },
+    { title: "Database Management", about: "Organizing and maintaining data integrity", tag: "Professional" },
+    { title: "Full-Stack Development", about: "End-to-end web application development", tag: "Professional" },
+    { title: "System Development", about: "Developing scalable system architectures", tag: "Professional" },
+    { title: "Data Analysis & Reporting", about: "Processing and visualizing data insights", tag: "Professional" },
+  ],
+};
+skillsData.all = [
+  ...skillsData.frontend,
+  ...skillsData.backend,
+  ...skillsData.database,
+  ...skillsData.tools,
+  ...skillsData.professional,
+];
+
+const marquee = document.getElementById("skillsMarquee");
+const filterTitle = document.getElementById("selectedFilterTitle");
+
+function loadMarquee(category = "all") {
+  const data = skillsData[category];
+  marquee.innerHTML = "";
+
+  // Duplicate for infinite effect
+  const repeated = [...data, ...data];
+  repeated.forEach(skill => {
+    const card = document.createElement("div");
+    card.className = "skill-card";
+    card.innerHTML = `
+      <h4>${skill.title}</h4>
+      <p>${skill.about}</p>
+      <span class="skill-tag">${skill.tag}</span>
+    `;
+    marquee.appendChild(card);
+  });
+
+  // Adjust speed
+  let speed = (category === "all" || category === "professional") ? 20 : 40;
+  marquee.style.animation = "none";
+  void marquee.offsetHeight;
+  marquee.style.animation = `scroll ${speed}s linear infinite`;
+  filterTitle.textContent = document.querySelector(`.filter-btn[data-category="${category}"]`).textContent.trim();
+}
+
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelector(".filter-btn.active").classList.remove("active");
+    btn.classList.add("active");
+    loadMarquee(btn.dataset.category);
+  });
+});
+
+loadMarquee("all");

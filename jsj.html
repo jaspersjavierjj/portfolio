@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jasper Saldeo Javier - Portfolio</title>
     <link rel="stylesheet" href="jsjcss.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <canvas id="waveCanvas"></canvas>
@@ -143,25 +144,48 @@
             </div>
         </section>
 
-        <!-- Tech Stack Section -->
-        <section id="techstack" class="section tech-stack-section">
+        <section id="skills" class="section skills-section">
             <div class="container">
-                <h2 class="section-title center">Tech Stack</h2>
-                <div class="tech-stack-grid" id="techStackGrid">
-                    <!-- Tech stack cards will be populated by JavaScript -->
+                <h2 class="section-title center">Skills & Technologies</h2>
+                <p class="section-subtitle center">
+                Comprehensive expertise in modern web technologies, beautifully displayed in infinite scrolling marquees. Hover to pause and explore each skill in detail.
+                </p>
+
+                <!-- Filter Buttons -->
+                <div class="skills-filter">
+                <button class="filter-btn active" data-category="all">
+                    <span class="material-icons">auto_awesome</span> All Skills
+                </button>
+                <button class="filter-btn" data-category="frontend">
+                    <span class="material-icons">language</span> Frontend Development
+                </button>
+                <button class="filter-btn" data-category="backend">
+                    <span class="material-icons">compare_arrows</span> Backend Development
+                </button>
+                <button class="filter-btn" data-category="database">
+                    <span class="material-icons">folder</span> Database & Storage
+                </button>
+                <button class="filter-btn" data-category="tools">
+                    <span class="material-icons">settings</span> Tools & Technologies
+                </button>
+                <button class="filter-btn" data-category="professional">
+                    <span class="material-icons">groups</span> Professional Skills
+                </button>
+                </div>
+
+                <!-- Selected Filter Label -->
+                <h3 class="selected-filter-title center" id="selectedFilterTitle">All Skills</h3>
+
+                <!-- Marquee Wrapper -->
+                <div class="marquee-wrapper">
+                <div class="marquee-content" id="skillsMarquee"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section skills-section">
-            <div class="container">
-                <h2 class="section-title center">Skills</h2>
-                <div class="skills-grid" id="skillsGrid">
-                    <!-- Skills will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
+
+
+
 
         <section id="projects" class="section projects-section">
             <div class="container">
