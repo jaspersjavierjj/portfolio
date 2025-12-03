@@ -256,10 +256,10 @@ body {
 }
 
 .section {
-  min-height: 100vh;          /* each takes full screen */
+  min-height: 90vh;          /* each takes full screen */
   display: flex;
   align-items: center;
-  padding: 5rem 1.5rem;
+  padding: 0rem 1.5rem;
 }
 
 .container {
@@ -268,11 +268,21 @@ body {
   width: 100%;
 }
 
+.section-title1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
 .section-title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
   color: var(--primary);
+  text-align: center;
+  display: flex;          /* optional */
+  justify-content: center;
 }
 
 .center {
@@ -511,7 +521,7 @@ body {
 
 /* ===== ABOUT SECTION ===== */
 .about-section {
-  padding: 6rem 3rem;
+  padding: 0rem 3rem;
 }
 
 .about-section .container {
@@ -699,10 +709,9 @@ body {
 
 /* Filter Buttons Layout */
 .skills-filter {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   gap: 1rem;
   max-width: 800px;
   margin: 0 auto 2rem auto;
@@ -728,7 +737,22 @@ body {
   color: var(--foreground);
   transition: all 0.3s ease;
   font-size: 0.95rem;
+  width: max-content;
 }
+
+.filter-btn {
+  flex: 1 1 calc(25% - 1rem); /* 4 buttons per row */
+  max-width: calc(25% - 1rem);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .filter-btn {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+}
+
 
 .filter-btn:hover {
   background: rgba(14, 165, 233, 0.2);
