@@ -217,6 +217,30 @@ body {
   color: var(--primary);
 }
 
+/* Download Resume Button */
+.download-btn {
+  padding: 0.6rem 1rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: #0284c7; /* slightly darker shade */
+}
+
+[data-theme="dark"] .download-btn {
+  background-color: var(--primary);
+}
+
+[data-theme="dark"] .download-btn:hover {
+  background-color: #0284c7;
+}
+
 /* Dark Mode Toggle */
 .dark-mode-toggle {
   position: relative;
