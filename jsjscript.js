@@ -553,8 +553,13 @@ function loadMarquee(category = "all") {
   marquee.style.animation = "none";
   void marquee.offsetHeight;
   marquee.style.animation = `scroll ${speed}s linear infinite`;
-  filterTitle.textContent = document.querySelector(`.filter-btn[data-category="${category}"]`).textContent.trim();
+
+  // Only take the text label, ignore icon
+  const btnLabel = document.querySelector(`.filter-btn[data-category="${category}"]`);
+  const textNodes = Array.from(btnLabel.childNodes).filter(n => n.nodeType === 3);
+  filterTitle.textContent = textNodes.map(n => n.textContent.trim()).join(' ');
 }
+
 
 document.querySelectorAll(".filter-btn").forEach(btn => {
   btn.addEventListener("click", () => {
