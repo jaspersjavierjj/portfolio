@@ -161,7 +161,7 @@ const projects = [
   {
     title: "Thrift Shop: Website Builder",
     description: "Productivity app with user authentication, real-time updates, and collaborative features.",
-    image: "task-management-app.png",
+    image: "projects/vvg.png",
     link: "#",
     category: "webapps",
   },
@@ -528,7 +528,7 @@ const skillsData = {
     { title: "Graphics", about: "Text motion, overlays, and visual enhancements", tag: "Type" },
   ],
     software_editing: [
-    { title: "Photoshop", about: "Graphic design, photo manipulation, and visual assets", tag: "Software" },
+    { title: "Photoshop", about: "Graphic design, photo manipulation, visual assets", tag: "Software" },
     { title: "Vegas Pro", about: "Professional non-linear video editing workflow", tag: "Software" },
     { title: "CapCut", about: "Desktop editing with templates and effects", tag: "Software" },
     { title: "After Effects", about: "Motion graphics, animation, and visual effects", tag: "Software" },
