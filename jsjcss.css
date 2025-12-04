@@ -824,16 +824,10 @@ body {
 .skills-filter {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center;       /* 🔥 centers rows */
   gap: 1rem;
   max-width: 800px;
   margin: 0 auto 2rem auto;
-}
-
-@media (max-width: 768px) {
-  .skills-filter {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .filter-btn {
@@ -843,6 +837,7 @@ body {
   justify-content: center;
   gap: 0.25rem;
   padding: 1rem;
+
   background: rgba(14, 165, 233, 0.1);
   border: 1px solid var(--border);
   border-radius: 0.5rem;
@@ -850,23 +845,15 @@ body {
   color: var(--foreground);
   transition: all 0.3s ease;
   font-size: 0.95rem;
+
+  /* 🔥 Key line — allows natural width, perfect centering */
+  flex: 0 0 auto;
+
+  /* ensures they don’t stretch */
   width: max-content;
 }
 
-.filter-btn {
-  flex: 1 1 calc(25% - 1rem); /* 4 buttons per row */
-  max-width: calc(25% - 1rem);
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .filter-btn {
-    flex: 1 1 calc(50% - 1rem);
-    max-width: calc(50% - 1rem);
-  }
-}
-
-
+/* Hover & Active States */
 .filter-btn:hover {
   background: rgba(14, 165, 233, 0.2);
   transform: scale(1.08);
@@ -882,6 +869,7 @@ body {
   font-size: 1.3rem;
 }
 
+/* Selected filter title */
 .selected-filter-title {
   color: var(--primary);
   font-size: 1.5rem;

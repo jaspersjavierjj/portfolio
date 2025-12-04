@@ -138,35 +138,35 @@ const softSkills = [
 
 const projects = [
   {
-    title: "Portfolio Website",
+    title: "Real Estate Information & Client Booking Website",
     description: "Personal website showcasing skills and projects with modern design and smooth animations.",
-    image: "modern-portfolio-website.png",
+    image: "projects/rental.png",
     link: "#",
     category: "website",
   },
-  {
-    title: "E-commerce System",
-    description: "Full-stack online store with cart functionality, payment integration, and admin dashboard.",
-    image: "ecommerce-website-interface.png",
-    link: "#",
-    category: "webapps",
-  },
-  {
-    title: "Task Manager App",
-    description: "Productivity app with user authentication, real-time updates, and collaborative features.",
-    image: "task-management-app.png",
-    link: "#",
-    category: "webapps",
-  },
-  {
-    title: "Weather Dashboard",
+    {
+    title: "Aptly: Rental Application",
     description: "Real-time weather application with location-based forecasts and interactive maps.",
     image: "weather-dashboard-interface.png",
     link: "#",
     category: "mobile",
   },
   {
-    title: "Social Media Platform",
+    title: "Events Management System",
+    description: "Full-stack online store with cart functionality, payment integration, and admin dashboard.",
+    image: "ecommerce-website-interface.png",
+    link: "#",
+    category: "webapps",
+  },
+  {
+    title: "Thrift Shop: Website Builder",
+    description: "Productivity app with user authentication, real-time updates, and collaborative features.",
+    image: "task-management-app.png",
+    link: "#",
+    category: "webapps",
+  },
+  {
+    title: "VAWC Complaints Reporting System",
     description: "Full-featured social platform with posts, messaging, and user profiles.",
     image: "social-media-interface.png",
     link: "#",
@@ -519,6 +519,20 @@ const skillsData = {
     { title: "System Development", about: "Developing scalable system architectures", tag: "Professional" },
     { title: "Data Analysis & Reporting", about: "Processing and visualizing data insights", tag: "Professional" },
   ],
+    video_editing: [
+    { title: "SDE", about: "Same Day Edit video creation for events", tag: "Type" },
+    { title: "Short Film", about: "Narrative storytelling through cinematic editing", tag: "Type" },
+    { title: "Music Video", about: "Rhythm-based cuts, VFX, and creative transitions", tag: "Type" },
+    { title: "Skit", about: "Fast-paced comedic edits and timing-based cuts", tag: "Type" },
+    { title: "Logo Animation / 3D", about: "Animated logos and simple 3D intro sequences", tag: "Type" },
+    { title: "Graphics", about: "Text motion, overlays, and visual enhancements", tag: "Type" },
+  ],
+    software_editing: [
+    { title: "Photoshop", about: "Graphic design, photo manipulation, and visual assets", tag: "Software" },
+    { title: "Vegas Pro", about: "Professional non-linear video editing workflow", tag: "Software" },
+    { title: "CapCut", about: "Desktop editing with templates and effects", tag: "Software" },
+    { title: "After Effects", about: "Motion graphics, animation, and visual effects", tag: "Software" },
+  ],
 };
 skillsData.all = [
   ...skillsData.frontend,
@@ -526,6 +540,8 @@ skillsData.all = [
   ...skillsData.database,
   ...skillsData.tools,
   ...skillsData.professional,
+  ...skillsData.video_editing,
+  ...skillsData.software_editing
 ];
 
 const marquee = document.getElementById("skillsMarquee");
