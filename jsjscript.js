@@ -147,14 +147,14 @@ const projects = [
     {
     title: "Aptly: Rental Application",
     description: "Real-time weather application with location-based forecasts and interactive maps.",
-    image: "weather-dashboard-interface.png",
+    image: "projects/aptly1.png",
     link: "#",
     category: "mobile",
   },
   {
     title: "Events Management System",
     description: "Full-stack online store with cart functionality, payment integration, and admin dashboard.",
-    image: "ecommerce-website-interface.png",
+    image: "projects/communext3.png",
     link: "#",
     category: "webapps",
   },
