@@ -153,7 +153,7 @@ const projects = [
     link: "#",
     category: "mobile",
     categoryLabel: "Mobile App",
-    tags: ["Flutter", "Cross-Platform", "UI Design"]
+    tags: ["Flutter", "Figma", "Cross-Platform", "UI Design",]
   },
   {
     title: "Events Management System",
@@ -162,7 +162,7 @@ const projects = [
     link: "#",
     category: "webapps",
     categoryLabel: "Web App",
-    tags: ["Full-Stack", "Database", "Admin Panel"]
+    tags: ["Full-Stack", "Tracker", "Admin Panel", "Firebase"]
   },
   {
     title: "Thrift Shop: Website Builder",
@@ -171,7 +171,7 @@ const projects = [
     link: "#",
     category: "webapps",
     categoryLabel: "Web App",
-    tags: ["E-commerce", "UI/UX", "Responsive"]
+    tags: ["E-commerce", "Wix", "UI/UX", "Responsive"]
   },
   {
     title: "VAWC Complaints Reporting System",
@@ -180,7 +180,7 @@ const projects = [
     link: "#",
     category: "webapps",
     categoryLabel: "Web App",
-    tags: ["System Development", "Security", "User Management"]
+    tags: ["System Development", "Security", "Admin Panel", "Firebase"]
   }
 ];
 
