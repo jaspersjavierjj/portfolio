@@ -972,9 +972,11 @@ body {
   overflow: hidden;
 }
 
+/* 🔥 NEW HOVER EFFECT ADDED */
 .project-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  transform: translateY(-0.5rem);
+  transform: translateY(-6px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 25px -5px rgba(14,165,233,0.25); /* glowing blue shadow */
 }
 
 .project-image-container {
@@ -984,7 +986,7 @@ body {
 
 .project-image {
   width: 100%;
-  height: 12rem;
+  height: 11rem;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -1005,13 +1007,13 @@ body {
 }
 
 .project-content {
-  padding: 1rem;
+  padding: 0.75rem;
 }
 
 .project-title {
   font-weight: bold;
   font-size: 1.25rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
   transition: color 0.3s ease;
 }
 
@@ -1020,18 +1022,19 @@ body {
 }
 
 .project-description {
+  font-size: 14px;
   color: var(--muted-foreground);
-  margin-bottom: 1rem;
-  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
 }
 
 .project-btn {
   background-color: transparent;
   color: var(--foreground);
   border: 1px solid var(--border);
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.9rem;
   border-radius: 0.375rem;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-flex;
@@ -1047,8 +1050,8 @@ body {
 }
 
 .project-btn svg {
-  width: 1rem;
-  height: 1rem;
+  width: 0.9rem;
+  height: 0.9rem;
 }
 
 .projects-filters {
@@ -1059,6 +1062,41 @@ body {
   margin-top: 2rem;
   flex-wrap: wrap;
 }
+
+.project-category {
+  display: inline-block;
+  background: rgba(14, 165, 233, 0.15);
+  color: var(--primary);
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 0.35rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.project-tags {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-tag {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  border-radius: 0.35rem;
+  color: var(--foreground);
+  transition: 0.2s ease;
+}
+
+.project-tag:hover {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+}
+
 
 .filter-btn {
   display: flex;

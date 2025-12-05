@@ -138,41 +138,52 @@ const softSkills = [
 
 const projects = [
   {
-    title: "Real Estate Information & Client Booking Website",
+    title: "Real Estate Booking Website",
     description: "Personal website showcasing skills and projects with modern design and smooth animations.",
     image: "projects/rental.png",
-    link: "#",
+    link: "https://javiermarilea.systeme.io/",
     category: "website",
+    categoryLabel: "Website",
+    tags: ["System.io", "UI/UX", "Responsive Design", "Real Estate"]
   },
-    {
+  {
     title: "Aptly: Rental Application",
-    description: "Real-time weather application with location-based forecasts and interactive maps.",
+    description: "Rental mobile application for finding properties and booking appointments.",
     image: "projects/aptly1.png",
     link: "#",
     category: "mobile",
+    categoryLabel: "Mobile App",
+    tags: ["Flutter", "Cross-Platform", "UI Design"]
   },
   {
     title: "Events Management System",
-    description: "Full-stack online store with cart functionality, payment integration, and admin dashboard.",
+    description: "Complete event management system with scheduling, booking, and admin modules.",
     image: "projects/communext3.png",
     link: "#",
     category: "webapps",
+    categoryLabel: "Web App",
+    tags: ["Full-Stack", "Database", "Admin Panel"]
   },
   {
     title: "Thrift Shop: Website Builder",
-    description: "Productivity app with user authentication, real-time updates, and collaborative features.",
+    description: "Online shop builder system with product management and customizable layouts.",
     image: "projects/vvg.png",
     link: "#",
     category: "webapps",
+    categoryLabel: "Web App",
+    tags: ["E-commerce", "UI/UX", "Responsive"]
   },
   {
     title: "VAWC Complaints Reporting System",
-    description: "Full-featured social platform with posts, messaging, and user profiles.",
-    image: "social-media-interface.png",
+    description: "Digital reporting platform for VAWC incidents with secure data handling.",
+    image: "projects/vawc1.png",
     link: "#",
     category: "webapps",
+    categoryLabel: "Web App",
+    tags: ["System Development", "Security", "User Management"]
   }
 ];
+
 
 const creativeProjects = [
   {
@@ -331,6 +342,10 @@ function renderProjects(filter = "all") {
   const filtered = filter === "all" ? projects : projects.filter(p => p.category === filter);
 
   filtered.forEach((project) => {
+    const tagsHTML = project.tags
+      .map(tag => `<span class="project-tag">${tag}</span>`)
+      .join("");
+
     const projectCard = document.createElement("div");
     projectCard.className = "project-card";
     projectCard.innerHTML = `
@@ -339,9 +354,17 @@ function renderProjects(filter = "all") {
         <div class="project-overlay"></div>
       </div>
       <div class="project-content">
+
+        <!-- category label -->
+        <span class="project-category">${project.categoryLabel}</span>
+
         <h3 class="project-title">${project.title}</h3>
         <p class="project-description">${project.description}</p>
-        <a href="${project.link}" class="project-btn">
+
+        <!-- tags -->
+        <div class="project-tags">${tagsHTML}</div>
+
+        <a href="${project.link}" class="project-btn" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
             <polyline points="15,3 21,3 21,9"></polyline>
