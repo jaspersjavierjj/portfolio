@@ -338,15 +338,15 @@ function renderProjects(filter = "all") {
 }
 
 const creativeProjects = [
-  { title: "Project 1", image: "video1.jpg", alt: "Video Project 1", link: "#" },
-  { title: "Project 2", image: "video2.jpg", alt: "Video Project 2", link: "#" },
-  { title: "Project 3", image: "video3.jpg", alt: "Video Project 3", link: "#" },
-  { title: "Project 4", image: "video4.jpg", alt: "Video Project 4", link: "#" },
-  { title: "Project 5", image: "video5.jpg", alt: "Video Project 5", link: "#" },
-  { title: "Project 6", image: "video6.jpg", alt: "Video Project 6", link: "#" },
-  { title: "Project 7", image: "video7.jpg", alt: "Video Project 7", link: "#" },
-  { title: "Project 8", image: "video8.jpg", alt: "Video Project 8", link: "#" },
-  { title: "Project 9", image: "video9.jpg", alt: "Video Project 9", link: "#" },
+  { title: "Project 1", image: "creative_projects/Nature_Tagaytay.png", alt: "Video Project 1", link: "#" },
+  { title: "Project 2", image: "creative_projects/Music_Video.png", alt: "Video Project 2", link: "#" },
+  { title: "Project 3", image: "creative_projects/SDE.png", alt: "Video Project 3", link: "#" },
+  { title: "Project 4", image: "creative_projects/Short_Film_Me.png", alt: "Video Project 4", link: "#" },
+  { title: "Project 5", image: "creative_projects/Introduction.png", alt: "Video Project 5", link: "#" },
+  { title: "Project 6", image: "creative_projects/Xceed.png", alt: "Video Project 6", link: "#" },
+  { title: "Project 7", image: "creative_projects/Boxing.png", alt: "Video Project 7", link: "#" },
+  { title: "Project 8", image: "creative_projects/HunterXHunter.png", alt: "Video Project 8", link: "#" },
+  { title: "Project 9", image: "creative_projects/Logo.png", alt: "Video Project 9", link: "#" },
   { title: "Project 10", image: "video10.jpg", alt: "Video Project 10", link: "#" },
   { title: "Project 11", image: "video11.jpg", alt: "Video Project 11", link: "#" }
 ];
@@ -371,12 +371,6 @@ function renderCreativeCarousel() {
 
     card.innerHTML = `
       <img src="${proj.image}" alt="${proj.alt}">
-      <div class="creative-video-indicator">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="23 7 16 12 23 17 23 7"></polygon>
-              <rect x="1" y="5" width="15" height="14" rx="2"></rect>
-          </svg>
-      </div>
     `;
 
     grid.appendChild(card);

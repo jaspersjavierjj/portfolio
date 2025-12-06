@@ -1177,17 +1177,6 @@ body {
   object-fit: cover;
 }
 
-/* Video Play Icon */
-.creative-video-indicator {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-  padding: 0.5rem;
-  border-radius: 50%;
-}
-
 /* Wrapper to position arrows */
 .creative-carousel-wrapper {
   position: relative;
