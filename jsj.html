@@ -253,20 +253,26 @@
         </section>
 
         <!-- Creative Projects Section -->
-        <section id="hobbyprojects" class="section creative-projects-section">
+        <section id="creativeProjectsSection" class="section creative-projects-section">
             <div class="container">
                 <h2 class="section-title center">Creative Projects</h2>
-                <div class="projects-container">
-                    <div class="projects-grid" id="creativeProjectsGrid">
-                        <!-- Creative projects will be populated by JavaScript -->
+
+                <div class="creative-carousel-wrapper">
+
+                    <!-- Grid -->
+                    <div class="creative-grid" id="creativeProjectsCarouselGrid">
+                        <!-- JS will load 6 items -->
                     </div>
-                    <div class="carousel-nav">
-                        <button id="prevCreativeProjects" class="carousel-btn">
+
+                    <!-- Navigation -->
+                    <div class="creative-carousel-nav">
+                        <button id="creativeProjectsPrevBtn" class="carousel-btn">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="15,18 9,12 15,6"></polyline>
                             </svg>
                         </button>
-                        <button id="nextCreativeProjects" class="carousel-btn">
+
+                        <button id="creativeProjectsNextBtn" class="carousel-btn">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="9,18 15,12 9,6"></polyline>
                             </svg>
@@ -275,6 +281,7 @@
                 </div>
             </div>
         </section>
+
 
         <!-- Contact Section -->
         <section id="contact" class="section contact-section">

@@ -184,49 +184,8 @@ const projects = [
   }
 ];
 
-
-const creativeProjects = [
-  {
-    title: "Music Video Production",
-    description: "Cinematic music video with dynamic editing, color grading, and visual effects.",
-    image: "music-video-production-cinematic.jpg",
-    link: "#",
-  },
-  {
-    title: "Short Film Documentary",
-    description: "Documentary-style short film with storytelling, interviews, and professional editing.",
-    image: "documentary-film-production.jpg",
-    link: "#",
-  },
-  {
-    title: "Commercial Advertisement",
-    description: "Product commercial with motion graphics, sound design, and brand storytelling.",
-    image: "commercial-advertisement-video.jpg",
-    link: "#",
-  },
-  {
-    title: "Event Highlight Reel",
-    description: "Dynamic event coverage with multi-camera editing and synchronized audio.",
-    image: "event-videography-highlight-reel.jpg",
-    link: "#",
-  },
-  {
-    title: "Travel Vlog Series",
-    description: "Travel documentary series with drone footage, time-lapse, and narrative editing.",
-    image: "travel-vlog-drone-footage.jpg",
-    link: "#",
-  },
-  {
-    title: "Corporate Training Video",
-    description: "Professional training content with animations, graphics, and clear instructional design.",
-    image: "corporate-training-video-production.jpg",
-    link: "#",
-  },
-]
-
 // State
 let currentProjectIndex = 0
-let currentCreativeIndex = 0
 
 // Utility Functions
 function scrollToSection(sectionId) {
@@ -378,6 +337,89 @@ function renderProjects(filter = "all") {
   });
 }
 
+const creativeProjects = [
+  { title: "Project 1", image: "video1.jpg", alt: "Video Project 1", link: "#" },
+  { title: "Project 2", image: "video2.jpg", alt: "Video Project 2", link: "#" },
+  { title: "Project 3", image: "video3.jpg", alt: "Video Project 3", link: "#" },
+  { title: "Project 4", image: "video4.jpg", alt: "Video Project 4", link: "#" },
+  { title: "Project 5", image: "video5.jpg", alt: "Video Project 5", link: "#" },
+  { title: "Project 6", image: "video6.jpg", alt: "Video Project 6", link: "#" },
+  { title: "Project 7", image: "video7.jpg", alt: "Video Project 7", link: "#" },
+  { title: "Project 8", image: "video8.jpg", alt: "Video Project 8", link: "#" },
+  { title: "Project 9", image: "video9.jpg", alt: "Video Project 9", link: "#" },
+  { title: "Project 10", image: "video10.jpg", alt: "Video Project 10", link: "#" },
+  { title: "Project 11", image: "video11.jpg", alt: "Video Project 11", link: "#" }
+];
+
+// 3 columns × 2 rows = 6 visible per page
+let creativePageIndex = 0;
+const creativePageSize = 6;
+
+/* RENDER CAROUSEL ITEMS */
+function renderCreativeCarousel() {
+  const grid = document.getElementById("creativeProjectsCarouselGrid");
+  grid.innerHTML = "";
+
+  const start = creativePageIndex * creativePageSize;
+  const end = start + creativePageSize;
+
+  const visibleProjects = creativeProjects.slice(start, end);
+
+  visibleProjects.forEach((proj) => {
+    const card = document.createElement("div");
+    card.className = "creative-project-card";
+
+    card.innerHTML = `
+      <img src="${proj.image}" alt="${proj.alt}">
+      <div class="creative-video-indicator">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="23 7 16 12 23 17 23 7"></polygon>
+              <rect x="1" y="5" width="15" height="14" rx="2"></rect>
+          </svg>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+
+  document.getElementById("creativeProjectsPrevBtn").disabled = creativePageIndex === 0;
+  document.getElementById("creativeProjectsNextBtn").disabled =
+    end >= creativeProjects.length;
+}
+
+/* SLIDE ANIMATION HANDLER */
+function animateSlide(direction) {
+  const grid = document.getElementById("creativeProjectsCarouselGrid");
+
+  // Add slide direction class
+  grid.classList.add(direction === "next" ? "slide-left" : "slide-right");
+
+  // After animation, render new content and remove slide class
+  setTimeout(() => {
+    renderCreativeCarousel();
+    grid.classList.remove("slide-left", "slide-right");
+  }, 350); // match CSS duration
+}
+
+/* BUTTON HANDLERS */
+document.getElementById("creativeProjectsPrevBtn").addEventListener("click", () => {
+  if (creativePageIndex > 0) {
+    creativePageIndex--;
+    animateSlide("prev");
+  }
+});
+
+document.getElementById("creativeProjectsNextBtn").addEventListener("click", () => {
+  if ((creativePageIndex + 1) * creativePageSize < creativeProjects.length) {
+    creativePageIndex++;
+    animateSlide("next");
+  }
+});
+
+// INIT
+renderCreativeCarousel();
+
+
 // Filter button clicks
 document.querySelectorAll(".filter-btn").forEach(btn => {
   btn.addEventListener("click", () => {
@@ -392,89 +434,9 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjects("all");
 });
 
-function renderCreativeProjects() {
-  const creativeProjectsGrid = document.getElementById("creativeProjectsGrid")
-  const visibleProjects = creativeProjects.slice(currentCreativeIndex, currentCreativeIndex + 3)
-
-  creativeProjectsGrid.innerHTML = ""
-
-  visibleProjects.forEach((project) => {
-    const projectCard = document.createElement("div")
-    projectCard.className = "project-card"
-
-    projectCard.innerHTML = `
-            <div class="project-image-container">
-                <img src="${project.image}" alt="${project.title}" class="project-image">
-                <div class="project-overlay"></div>
-                <div class="video-indicator">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                    </svg>
-                </div>
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">${project.title}</h3>
-                <p class="project-description">${project.description}</p>
-                <a href="${project.link}" class="project-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15,3 21,3 21,9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    View Project
-                </a>
-            </div>
-        `
-
-    creativeProjectsGrid.appendChild(projectCard)
-  })
-
-  // Update navigation buttons
-  const prevBtn = document.getElementById("prevCreativeProjects")
-  const nextBtn = document.getElementById("nextCreativeProjects")
-
-  prevBtn.disabled = currentCreativeIndex === 0
-  nextBtn.disabled = currentCreativeIndex + 3 >= creativeProjects.length
-}
-
-// Navigation Functions
-function nextProjects() {
-  if (currentProjectIndex + 3 < projects.length) {
-    currentProjectIndex += 3
-    renderProjects()
-  }
-}
-
-function prevProjects() {
-  if (currentProjectIndex - 3 >= 0) {
-    currentProjectIndex -= 3
-    renderProjects()
-  }
-}
-
-function nextCreativeProjects() {
-  if (currentCreativeIndex + 3 < creativeProjects.length) {
-    currentCreativeIndex += 3
-    renderCreativeProjects()
-  }
-}
-
-function prevCreativeProjects() {
-  if (currentCreativeIndex - 3 >= 0) {
-    currentCreativeIndex -= 3
-    renderCreativeProjects()
-  }
-}
 
 // Event Listeners
 function initEventListeners() {
-  // Project navigation
-  document.getElementById("prevProjects").addEventListener("click", prevProjects)
-  document.getElementById("nextProjects").addEventListener("click", nextProjects)
-  document.getElementById("prevCreativeProjects").addEventListener("click", prevCreativeProjects)
-  document.getElementById("nextCreativeProjects").addEventListener("click", nextCreativeProjects)
-
   // Contact form
   const contactForm = document.querySelector(".contact-form")
   contactForm.addEventListener("submit", (e) => {
@@ -488,8 +450,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initDarkMode()
   renderTechStack()
   renderSkills()
-  renderProjects()
-  renderCreativeProjects()
   initEventListeners()
 
   // Add fade-in animation to intro content
@@ -609,3 +569,4 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
 });
 
 loadMarquee("all");
+
