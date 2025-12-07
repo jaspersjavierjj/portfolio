@@ -1161,21 +1161,51 @@ body {
 }
 
 
-/* Project Box (scaled 1920x1080 to 320x180) */
+/* Project Box */
 .creative-project-card {
   width: 100%;
-  aspect-ratio: 16 / 9; /* auto scales 1920x1080 */
+  aspect-ratio: 16 / 9;
   position: relative;
   overflow: hidden;
   border-radius: 12px;
   background-color: #000;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.creative-project-card img {
+/* Glow edge on hover */
+.creative-project-card:hover {
+  box-shadow: 0 0 18px rgba(0, 150, 255, 0.7); /* blue glow */
+  transform: scale(1.02); /* light zoom for premium effect */
+}
+
+/* Thumbnail + Video shared base */
+.creative-project-card img,
+.creative-project-card video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
 }
+
+/* Video hidden initially */
+.creative-project-card video {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* On hover: video appears, thumbnail fades */
+.creative-project-card:hover video {
+  opacity: 1;
+}
+
+.creative-project-card:hover img {
+  opacity: 0;
+}
+
 
 /* Wrapper to position arrows */
 .creative-carousel-wrapper {

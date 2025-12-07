@@ -338,17 +338,83 @@ function renderProjects(filter = "all") {
 }
 
 const creativeProjects = [
-  { title: "Project 1", image: "creative_projects/Nature_Tagaytay.png", alt: "Video Project 1", link: "#" },
-  { title: "Project 2", image: "creative_projects/Music_Video.png", alt: "Video Project 2", link: "#" },
-  { title: "Project 3", image: "creative_projects/SDE.png", alt: "Video Project 3", link: "#" },
-  { title: "Project 4", image: "creative_projects/Short_Film_Me.png", alt: "Video Project 4", link: "#" },
-  { title: "Project 5", image: "creative_projects/Introduction.png", alt: "Video Project 5", link: "#" },
-  { title: "Project 6", image: "creative_projects/Xceed.png", alt: "Video Project 6", link: "#" },
-  { title: "Project 7", image: "creative_projects/Boxing.png", alt: "Video Project 7", link: "#" },
-  { title: "Project 8", image: "creative_projects/HunterXHunter.png", alt: "Video Project 8", link: "#" },
-  { title: "Project 9", image: "creative_projects/Logo.png", alt: "Video Project 9", link: "#" },
-  { title: "Project 10", image: "video10.jpg", alt: "Video Project 10", link: "#" },
-  { title: "Project 11", image: "video11.jpg", alt: "Video Project 11", link: "#" }
+  { 
+    title: "Project 1",
+    image: "creative_projects/Nature_Tagaytay.png",
+    preview: "creative_projects/previews/Nature_Tagaytay.mp4",
+    alt: "Video Project 1",
+    link: "#" 
+  },
+  { 
+    title: "Project 2",
+    image: "creative_projects/Music_Video.png",
+    preview: "creative_projects/previews/Music_Video.mp4",
+    alt: "Video Project 2",
+    link: "#" 
+  },
+  { 
+    title: "Project 3",
+    image: "creative_projects/SDE.png",
+    preview: "creative_projects/previews/SDE.mp4",
+    alt: "Video Project 3",
+    link: "#" 
+  },
+  { 
+    title: "Project 4",
+    image: "creative_projects/Short_Film_Me.png",
+    preview: "creative_projects/previews/Short_Film_Me.mp4",
+    alt: "Video Project 4",
+    link: "#" 
+  },
+  { 
+    title: "Project 5",
+    image: "creative_projects/Introduction.png",
+    preview: "creative_projects/previews/Introduction.mp4",
+    alt: "Video Project 5",
+    link: "#" 
+  },
+  { 
+    title: "Project 6",
+    image: "creative_projects/Xceed.png",
+    preview: "creative_projects/previews/Xceed.mp4",
+    alt: "Video Project 6",
+    link: "#" 
+  },
+  { 
+    title: "Project 7",
+    image: "creative_projects/Boxing.png",
+    preview: "creative_projects/previews/Boxing.mp4",
+    alt: "Video Project 7",
+    link: "#" 
+  },
+  { 
+    title: "Project 8",
+    image: "creative_projects/HunterXHunter.png",
+    preview: "creative_projects/previews/HunterXHunter.mp4",
+    alt: "Video Project 8",
+    link: "#" 
+  },
+  { 
+    title: "Project 9",
+    image: "creative_projects/Logo.png",
+    preview: "creative_projects/previews/Logo.mp4",
+    alt: "Video Project 9",
+    link: "#" 
+  },
+  { 
+    title: "Project 10",
+    image: "video10.jpg",
+    preview: "previews/video10.mp4",
+    alt: "Video Project 10",
+    link: "#" 
+  },
+  { 
+    title: "Project 11",
+    image: "video11.jpg",
+    preview: "previews/video11.mp4",
+    alt: "Video Project 11",
+    link: "#" 
+  }
 ];
 
 // 3 columns × 2 rows = 6 visible per page
@@ -366,12 +432,38 @@ function renderCreativeCarousel() {
   const visibleProjects = creativeProjects.slice(start, end);
 
   visibleProjects.forEach((proj) => {
-    const card = document.createElement("div");
+    const card = document.createElement("a");
     card.className = "creative-project-card";
+    card.href = proj.link;
+    card.target = "_blank"; // open in new tab
 
     card.innerHTML = `
       <img src="${proj.image}" alt="${proj.alt}">
+      <video muted loop preload="none">
+          <source src="${proj.preview}" type="video/mp4">
+      </video>
     `;
+
+    // Hover event: play video
+    card.addEventListener("mouseenter", () => {
+      const img = card.querySelector("img");
+      const video = card.querySelector("video");
+
+      img.style.display = "none";
+      video.style.display = "block";
+      video.currentTime = 0;
+      video.play();
+    });
+
+    // Leave event: stop video + show image
+    card.addEventListener("mouseleave", () => {
+      const img = card.querySelector("img");
+      const video = card.querySelector("video");
+
+      video.pause();
+      video.style.display = "none";
+      img.style.display = "block";
+    });
 
     grid.appendChild(card);
   });
