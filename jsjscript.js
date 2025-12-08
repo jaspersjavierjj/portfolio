@@ -341,78 +341,71 @@ const creativeProjects = [
   { 
     title: "Project 1",
     image: "creative_projects/Nature_Tagaytay.png",
-    preview: "creative_projects/previews/Nature_Tagaytay.mp4",
+    preview: "creative_projects/video3to4/NATURE.mp4",
     alt: "Video Project 1",
     link: "#" 
   },
   { 
     title: "Project 2",
     image: "creative_projects/Music_Video.png",
-    preview: "creative_projects/previews/Music_Video.mp4",
+    preview: "creative_projects/video3to4/MUSICVIDEO.mp4",
     alt: "Video Project 2",
     link: "#" 
   },
   { 
     title: "Project 3",
     image: "creative_projects/SDE.png",
-    preview: "creative_projects/previews/SDE.mp4",
+    preview: "creative_projects/video3to4/XLLNCE.mp4",
     alt: "Video Project 3",
     link: "#" 
   },
   { 
     title: "Project 4",
     image: "creative_projects/Short_Film_Me.png",
-    preview: "creative_projects/previews/Short_Film_Me.mp4",
+    preview: "creative_projects/video3to4/SHORTFILM.mp4",
     alt: "Video Project 4",
     link: "#" 
   },
   { 
     title: "Project 5",
     image: "creative_projects/Introduction.png",
-    preview: "creative_projects/previews/Introduction.mp4",
+    preview: "creative_projects/video3to4/ME.mp4",
     alt: "Video Project 5",
     link: "#" 
   },
   { 
     title: "Project 6",
     image: "creative_projects/Xceed.png",
-    preview: "creative_projects/previews/Xceed.mp4",
+    preview: "creative_projects/video3to4/XCD.mp4",
     alt: "Video Project 6",
     link: "#" 
   },
   { 
     title: "Project 7",
     image: "creative_projects/Boxing.png",
-    preview: "creative_projects/previews/Boxing.mp4",
+    preview: "creative_projects/video3to4/BOX.mp4",
     alt: "Video Project 7",
     link: "#" 
   },
   { 
     title: "Project 8",
     image: "creative_projects/HunterXHunter.png",
-    preview: "creative_projects/previews/HunterXHunter.mp4",
+    preview: "creative_projects/video3to4/HXH.mp4",
     alt: "Video Project 8",
     link: "#" 
   },
   { 
     title: "Project 9",
     image: "creative_projects/Logo.png",
-    preview: "creative_projects/previews/Logo.mp4",
+    preview: "creative_projects/video3to4/logo.mp4",
     alt: "Video Project 9",
     link: "#" 
   },
   { 
     title: "Project 10",
-    image: "video10.jpg",
-    preview: "previews/video10.mp4",
+    image: "creative_projects/Logo1.png",
+    preview: "creative_projects/video3to4/logo2.mp4",
     alt: "Video Project 10",
-    link: "#" 
-  },
-  { 
-    title: "Project 11",
-    image: "video11.jpg",
-    preview: "previews/video11.mp4",
-    alt: "Video Project 11",
     link: "#" 
   }
 ];
