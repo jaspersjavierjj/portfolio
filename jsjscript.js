@@ -343,70 +343,70 @@ const creativeProjects = [
     image: "creative_projects/Nature_Tagaytay.png",
     preview: "creative_projects/video3to4/NATURE.mp4",
     alt: "Video Project 1",
-    link: "#" 
+    link: "https://drive.google.com/file/d/1sRuMw4XGC-aE4nJxlZvCbInn_h_bfdSz/view?usp=sharing" 
   },
   { 
     title: "Project 2",
     image: "creative_projects/Music_Video.png",
     preview: "creative_projects/video3to4/MUSICVIDEO.mp4",
     alt: "Video Project 2",
-    link: "#" 
+    link: "https://drive.google.com/file/d/1GGUDCRL2V3AcUouYZOFmAynis4D2b2st/view?usp=sharing" 
   },
   { 
     title: "Project 3",
     image: "creative_projects/SDE.png",
     preview: "creative_projects/video3to4/XLLNCE.mp4",
     alt: "Video Project 3",
-    link: "#" 
+    link: "https://drive.google.com/file/d/1n-0RXD7_kiU5NpmE0olQHG5YTT9VZ2Dd/view?usp=sharing" 
   },
   { 
     title: "Project 4",
     image: "creative_projects/Short_Film_Me.png",
     preview: "creative_projects/video3to4/SHORTFILM.mp4",
     alt: "Video Project 4",
-    link: "#" 
+    link: "https://drive.google.com/file/d/1HNY37hJgXHTTJp2FG4K6LnMl9tsxyQ1Y/view?usp=sharing" 
   },
   { 
     title: "Project 5",
     image: "creative_projects/Introduction.png",
     preview: "creative_projects/video3to4/ME.mp4",
     alt: "Video Project 5",
-    link: "#" 
+    link: "https://drive.google.com/file/d/1446wpnRRmFMvV4ZUwt0PwmlBuiVwzyH2/view?usp=sharing" 
   },
   { 
     title: "Project 6",
     image: "creative_projects/Xceed.png",
     preview: "creative_projects/video3to4/XCD.mp4",
     alt: "Video Project 6",
-    link: "#" 
+    link: "https://drive.google.com/file/d/1nOjKzB2ziPrF49Pr_eU5TEqWkfP6rFpT/view?usp=sharing" 
   },
   { 
     title: "Project 7",
     image: "creative_projects/Boxing.png",
     preview: "creative_projects/video3to4/BOX.mp4",
     alt: "Video Project 7",
-    link: "#" 
+    link: "https://drive.google.com/file/d/1ymgSdx6sIM_leN4VkwbMJSndhtJseuwj/view?usp=sharing" 
   },
   { 
     title: "Project 8",
     image: "creative_projects/HunterXHunter.png",
     preview: "creative_projects/video3to4/HXH.mp4",
     alt: "Video Project 8",
-    link: "#" 
+    link: "https://drive.google.com/file/d/1Mftc81TBNAEVjuSsu-KD0VS2BPmZ8S_b/view?usp=sharing" 
   },
   { 
     title: "Project 9",
     image: "creative_projects/Logo.png",
     preview: "creative_projects/video3to4/logo.mp4",
     alt: "Video Project 9",
-    link: "#" 
+    link: "https://drive.google.com/file/d/1I1UqRUF3p-9lyNu2oip4jI1sJ8lVR3eZ/view?usp=sharing" 
   },
   { 
     title: "Project 10",
     image: "creative_projects/Logo1.png",
     preview: "creative_projects/video3to4/logo2.mp4",
     alt: "Video Project 10",
-    link: "#" 
+    link: "https://drive.google.com/file/d/1L53nlTMH9P87hzb5PaKxUCCraEMzQN4O/view?usp=sharing" 
   }
 ];
 
