@@ -282,7 +282,6 @@
             </div>
         </section>
 
-
         <!-- Contact Section -->
         <section id="contact" class="section contact-section">
             <div class="container">
@@ -385,6 +384,56 @@
                 </div>
             </div>
         </section>
+
+        <!-- Footer / Ending Section -->
+        <section id="footerSection" class="footer-section">
+            <div class="container footer-container">
+
+                <div class="footer-box">
+                    <h3 class="footer-name">Jasper Saldeo Javier</h3>
+                    <p class="footer-tagline">
+                        Creating digital experiences that inspire and perform.
+                    </p>
+                </div>
+
+                <div class="footer-box">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-list">
+                        <li>System.io</li>
+                        <li>Video Editor</li>
+                        <li>Web Developer</li>
+                        <li>WordPress</li>
+                    </ul>
+                </div>
+
+                <div class="footer-box">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-list">
+                        <li><a href="resume.pdf" target="_blank">Resume</a></li>
+                        <li><a href="#projects">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Jasper Saldeo Javier. All rights reserved.</p>
+
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scroll to Top Button -->
+        <button id="scrollTopBtn" class="scroll-top-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6,15 12,9 18,15"></polyline>
+            </svg>
+        </button>
+
     </div>
 
     <script src="jsjscript.js"></script>
@@ -550,6 +599,25 @@
                 document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
             }
 
+    </script>
+    <script>
+        /* Scroll to Top Button */
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 400) {
+                scrollTopBtn.classList.add("show");
+            } else {
+                scrollTopBtn.classList.remove("show");
+            }
+        });
+
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
     </script>
 
 

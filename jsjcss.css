@@ -1429,6 +1429,139 @@ body {
   height: 1.25rem;
 }
 
+/* Footer Section */
+.footer-section {
+  background-color: var(--card);
+  padding: 2.5rem 0 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+/* Main container WITH horizontal padding */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;  /* FIX: aligns with footer-bottom */
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    grid-template-columns: 4fr 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Left Column */
+.footer-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.footer-tagline {
+  margin-top: 0.4rem;
+  color: var(--muted-foreground);
+  line-height: 1.4;
+  font-size: 0.85rem;
+}
+
+/* Titles */
+.footer-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 0.8rem;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 0.35rem;
+  color: var(--muted-foreground);
+}
+
+.footer-list a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+  transition: color 0.25s ease;
+}
+
+.footer-list a:hover {
+  color: var(--primary);
+}
+
+/* Bottom Row */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 1.5rem auto 0;
+  padding: 1.2rem 1.5rem; /* matches container padding */
+  border-top: 1px solid var(--border);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 200;
+}
+
+.scroll-top-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+  transform: scale(1.1);
+}
+
 /* Responsive Design */
 @media (max-width: 767px) {
   .section {
