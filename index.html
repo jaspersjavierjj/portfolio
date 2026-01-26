@@ -443,8 +443,14 @@
     
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getDatabase, ref, push, runTransaction } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+  import {
+    getDatabase,
+    ref,
+    runTransaction,
+    set
+  } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
+  // 🔥 Firebase Config
   const firebaseConfig = {
     apiKey: "AIzaSyAXwkD0tQwiATETmKfP_7q56kavepCVv-4",
     authDomain: "portfolio-dccce.firebaseapp.com",
@@ -456,9 +462,11 @@
     databaseURL: "https://portfolio-dccce-default-rtdb.firebaseio.com"
   };
 
+  // 🔥 Init Firebase
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
 
+  // 🚫 Ignore localhost
   const isLocalhost =
     location.hostname === "localhost" ||
     location.hostname === "127.0.0.1";
@@ -466,7 +474,7 @@
   if (isLocalhost) {
     console.log("🚫 Localhost visit ignored");
   } else {
-    console.log("🌍 Hosted visit detected:", location.hostname);
+    console.log("🌍 Hosted visit detected");
 
     // 🕒 Timestamp formatter
     function getFormattedTimestamp() {
@@ -485,32 +493,48 @@
         .toLocaleString("en-US", options)
         .replace(",", "")
         .replace(" ", "_")
+        .replace(/\s/g, "_")
         .replace(/\//g, "-");
     }
 
-    // 1️⃣ Increment Total Visit Counter
-    const totalRef = ref(db, "TotalVisit/total");
-    runTransaction(totalRef, (current) => (current || 0) + 1)
+    // ===============================
+    // 1️⃣ TOTAL VISIT COUNTER
+    // ===============================
+    const totalVisitRef = ref(db, "TotalVisit/total");
+
+    runTransaction(totalVisitRef, (current) => (current || 0) + 1)
       .then(() => {
-        console.log("✅ TotalVisit updated successfully");
+        console.log("✅ TotalVisit updated");
       })
       .catch((error) => {
-        console.error("❌ Failed to update TotalVisit:", error);
+        console.error("❌ TotalVisit failed:", error);
       });
 
-    // 2️⃣ Log Visit Timestamp
-    const logsRef = ref(db, "Logs");
-    push(logsRef, {
-      timestamp: getFormattedTimestamp()
-    })
+    // ===============================
+    // 2️⃣ SEQUENTIAL LOGS (log1, log2…)
+    // ===============================
+    const logCounterRef = ref(db, "LogsCounter");
+
+    runTransaction(logCounterRef, (current) => (current || 0) + 1)
+      .then((result) => {
+        const logNumber = result.snapshot.val(); // 1,2,3...
+        const logKey = `log${logNumber}`;
+
+        const logRef = ref(db, `Logs/${logKey}`);
+
+        return set(logRef, {
+          timestamp: getFormattedTimestamp()
+        });
+      })
       .then(() => {
-        console.log("✅ Visit log added successfully");
+        console.log("✅ Log saved with sequential key");
       })
       .catch((error) => {
-        console.error("❌ Failed to add visit log:", error);
+        console.error("❌ Log save failed:", error);
       });
   }
 </script>
+
 
 
     <script>
