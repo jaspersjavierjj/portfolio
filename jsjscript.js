@@ -221,41 +221,41 @@ function toggleDarkMode() {
 
 // Tech Stack Functions
 function renderTechStack() {
-  const techStackGrid = document.getElementById("techStackGrid")
+  const techStackGrid = document.getElementById("techStackGrid");
+  if (!techStackGrid) {
+    console.warn("⚠️ techStackGrid not found in DOM");
+    return;
+  }
 
   techStackCategories.forEach((category) => {
-    const categoryCard = document.createElement("div")
-    categoryCard.className = "card"
+    const categoryCard = document.createElement("div");
+    categoryCard.className = "card";
 
-    const gridClass = category.skills.length === 2 ? "two-cols" : "three-cols"
+    const gridClass = category.skills.length === 2 ? "two-cols" : "three-cols";
 
     categoryCard.innerHTML = `
-            <div class="card-content">
-                <div class="tech-category-header">
-                    <div class="tech-icon-container">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 2rem; height: 2rem; color: var(--primary);">
-                            ${getCategoryIcon(category.title)}
-                        </svg>
-                    </div>
-                    <h3 class="tech-category-title">${category.title}</h3>
-                </div>
-                <div class="tech-skills-grid ${gridClass}">
-                    ${category.skills
-                      .map(
-                        (skill) => `
-                        <div class="tech-skill-item">
-                            <div class="tech-skill-icon">${skill.icon}</div>
-                            <span class="tech-skill-name">${skill.name}</span>
-                        </div>
-                    `,
-                      )
-                      .join("")}
-                </div>
+      <div class="card-content">
+        <div class="tech-category-header">
+          <div class="tech-icon-container">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 2rem; height: 2rem; color: var(--primary);">
+              ${getCategoryIcon(category.title)}
+            </svg>
+          </div>
+          <h3 class="tech-category-title">${category.title}</h3>
+        </div>
+        <div class="tech-skills-grid ${gridClass}">
+          ${category.skills.map(skill => `
+            <div class="tech-skill-item">
+              <div class="tech-skill-icon">${skill.icon}</div>
+              <span class="tech-skill-name">${skill.name}</span>
             </div>
-        `
+          `).join('')}
+        </div>
+      </div>
+    `;
 
-    techStackGrid.appendChild(categoryCard)
-  })
+    techStackGrid.appendChild(categoryCard);
+  });
 }
 
 function getCategoryIcon(title) {

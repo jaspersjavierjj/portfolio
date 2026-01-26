@@ -686,10 +686,10 @@
 
             boxes.push(box);
 
-            // Limit to 5 boxes
-            if (boxes.length > 8) {
+              // Limit to 8 boxes safely
+            while (boxes.length > 8) {
                 const old = boxes.shift();
-                if (old && old.parentNode) {
+                if (old && old.parentNode === highlightContainer) {
                 highlightContainer.removeChild(old);
                 }
             }
