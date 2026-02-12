@@ -508,47 +508,24 @@
         });
 
         // ===============================
-        // 3️⃣ DAILY FIRST VISIT EMAIL
+        // TEST EMAIL (NO RESTRICTION)
         // ===============================
 
-        const today = new Date().toISOString().split("T")[0];
-        const dailyRef = ref(db, "DailyEmail/lastSentDate");
-
-        runTransaction(dailyRef, (currentDate) => {
-        if (currentDate === today) {
-            return; // already sent today
-        }
-        return today; // update date → triggers email
-        })
-        .then((result) => {
-
-        if (!result.committed) {
-            console.log("📭 Email already sent today");
-            return;
-        }
-
-        console.log("📧 First visit today → sending email");
+        console.log("📧 Sending test email...");
 
         emailjs.send(
-            "service_7vps2he",
-            "template_b7s2bfe",
-            {
+        "service_7vps2he",
+        "template_b7s2bfe",
+        {
             Time: timestamp
-            }
+        }
         )
-        .then(() => {
-            console.log("✅ Daily email sent");
+        .then((response) => {
+        console.log("✅ EmailJS SUCCESS:", response);
         })
         .catch((error) => {
-            console.error("❌ Email error:", error);
+        console.error("❌ EmailJS FAILED:", error);
         });
-
-        })
-        .catch((error) => {
-        console.error("❌ Daily email transaction failed:", error);
-        });
-
-    }
     </script>
 
     <script>
