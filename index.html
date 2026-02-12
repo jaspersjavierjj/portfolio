@@ -440,11 +440,10 @@
     <script>
         
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
  
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
-        emailjs.init("Ne243AN7Zvfcljwfq");
+    emailjs.init("Ne243AN7Zvfcljwfq"); // your public key
     </script>
     
     <script type="module">
@@ -508,7 +507,7 @@
 
         emailjs.send(
             "service_7vps2he",
-            "template_b7s2bfe",
+            "template_hgdozt4",
             { Time: timestamp }
         )
         .then((response) => {
