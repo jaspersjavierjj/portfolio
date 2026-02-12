@@ -1,0 +1,239 @@
+[33mcommit 75093bb1e8766be27421f97ba33dcaa3f4857f49[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Thu Feb 12 21:24:29 2026 +0800
+
+    debugging03
+
+[33mcommit 78f582110ede4c95cadbfd579e037838a948e337[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Thu Feb 12 12:42:26 2026 +0800
+
+    debugging02
+
+[33mcommit 38b51a12995f8abc95d41534a513c7cce9d76ec3[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Thu Feb 12 12:35:12 2026 +0800
+
+    debugging01
+
+[33mcommit 24a536dd57ba2c5c8e0fde5dd31068bc00c978d3[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Thu Feb 12 12:30:36 2026 +0800
+
+    Debugging
+
+[33mcommit 791b80c66e2dcdf19e9b2e8bb42d7de3cba61ac2[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Thu Feb 12 12:16:54 2026 +0800
+
+    Visit Track
+
+[33mcommit e4430dd6d3be4a3474b11ea8015e7ea6c4e59c5d[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Mon Jan 26 19:17:42 2026 +0800
+
+    fixing 2 possible errors 'mouse move' 'teckstack'
+
+[33mcommit a9d1a1b673e7c47ede15c95dd4d57fcad2a76910[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Mon Jan 26 19:05:35 2026 +0800
+
+    fix Testing#3
+
+[33mcommit 030d74674cf409b0f5e2a8231bb7e03cea09e151[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Mon Jan 26 18:52:11 2026 +0800
+
+    Fix Testing#2
+
+[33mcommit af852ce39d42db956a7925ca696bc954b073a43e[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Mon Jan 26 15:15:43 2026 +0800
+
+    Testing
+
+[33mcommit cf73d8a6e6eb0369a7ee8229de1ea5f8d00fd9d3[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Mon Jan 26 14:36:03 2026 +0800
+
+    Adjustment
+
+[33mcommit 2a1457afce789792a8eb169048d6d0d812e27fa4[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Mon Jan 26 14:32:40 2026 +0800
+
+    Added Firebase SDK for total Visit and Timestamp
+
+[33mcommit cd8f2adac97f833e4e06f23c7346ebefc430d3b7[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Thu Jan 22 10:36:31 2026 +0800
+
+    Small Changes
+
+[33mcommit 94e387eb8bd947b843920bc28c85e46b481bdd14[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Sat Jan 3 16:21:07 2026 +0800
+
+    Rename jsj.html to index.html
+
+[33mcommit 5f6d69669543d54fcf5c48e3d2832ae3d0e9e7e9[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Tue Dec 9 11:57:37 2025 +0800
+
+    footer section
+
+[33mcommit a57544a70cad3a9ea5076a212ec31fb27890c5d1[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Mon Dec 8 10:34:26 2025 +0800
+
+    add short description on C/Project
+
+[33mcommit bbdc50beeb7c86f81b6f0797bbb7a31bb5c2ec2a[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Mon Dec 8 09:17:10 2025 +0800
+
+    Links
+
+[33mcommit a714ebfed279bb811b29afe01542e624934403d1[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Mon Dec 8 09:07:43 2025 +0800
+
+    Loop Preview Video & Additional C/Project
+
+[33mcommit ff03fee000103e6043c12f6528f855cc54fb673c[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Mon Dec 8 00:47:41 2025 +0800
+
+    video hover effect
+
+[33mcommit bb1b73b302385da00d452506f3b52679ddfd713e[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Sat Dec 6 17:58:10 2025 +0800
+
+    Creative Projects Photos & Adjustment
+
+[33mcommit 9e7a317b1829733a468bc2aebe2c033e1eb8059c[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Sat Dec 6 10:31:06 2025 +0800
+
+    Add Creative Project Section
+
+[33mcommit 0d4c6a24008b2f44cb5ad78e12848005dd92b8ef[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Fri Dec 5 13:08:57 2025 +0800
+
+    Added Links
+
+[33mcommit ac4d981f0cdf91980f68cfa6ac25da2a06f2f61f[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Fri Dec 5 12:16:28 2025 +0800
+
+    2 Added Photo & Adjustment to project-card
+
+[33mcommit 47dfc8d769dd2f64d18bab796f7cc7db0580e067[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Thu Dec 4 23:40:29 2025 +0800
+
+    adjustment to js and additional photo
+
+[33mcommit 2e09739f5d87a139282d809706418376824960fb[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Thu Dec 4 12:50:39 2025 +0800
+
+    additional photo for Projects
+
+[33mcommit a33fbe2654edce300e9a6991489c96b9966abffb[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Thu Dec 4 11:13:09 2025 +0800
+
+    project image & 2 additional fltr btn
+
+[33mcommit 802f2d4cd05ccd6490e88b62452ccd06f068843e[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Thu Dec 4 08:56:40 2025 +0800
+
+    Add another photo
+
+[33mcommit d305892d5bddd05bca0c71ee69529af3c2e996c8[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Wed Dec 3 18:24:33 2025 +0800
+
+    progress fill & typing text
+
+[33mcommit 48d236dc125c4fc9e9f777aad34eeee16aae40ba[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Wed Dec 3 14:45:00 2025 +0800
+
+    updated
+
+[33mcommit c8c18409c29f4e512588ebff370a301ad70d7c86[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Wed Dec 3 14:42:46 2025 +0800
+
+    updated DEC 3
+
+[33mcommit 0c6b6ee2a55e750c9b22580e7a424801955f5956[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Fri Oct 10 22:56:24 2025 +0800
+
+    CSS adjustment
+
+[33mcommit ec07e6127f512bfe636a7089d0b4706e8e023487[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Thu Oct 9 22:16:09 2025 +0800
+
+    Updated Skill & Tech Section
+
+[33mcommit f7210a7ecfa6b550cd9d238342b9c2c4c23a4e70[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Wed Oct 8 22:15:05 2025 +0800
+
+    Additional info
+
+[33mcommit 5dae42682220bac3927287471cdac02fec4a65dd[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Wed Oct 8 14:46:57 2025 +0800
+
+    alignment of the about section
+
+[33mcommit 6fa6bff6cede1eba6deead170d1976cfaaa19f51[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Mon Oct 6 21:33:45 2025 +0800
+
+    css update
+
+[33mcommit e3e6e370dbad12cee3e39dbed3889c9cf78b6fdd[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Mon Oct 6 21:30:57 2025 +0800
+
+    Update
+
+[33mcommit 4a40588dad28db6339cf512c7885133553253f78[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Tue Sep 30 11:44:41 2025 +0800
+
+    Changes in Feature Projects
+
+[33mcommit 95e1d1dd055b3b9d8dc06dd2a5dd6dc884a09829[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Sun Sep 28 23:01:17 2025 +0800
+
+    Small Changes
+
+[33mcommit ea81b5d3eda1f87d5feacc9fe4c6751958452097[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Sun Sep 28 11:48:07 2025 +0800
+
+    Added Scroll Indicator in IntroPage
+
+[33mcommit e9df689d29b6def810996ebeeaf67fd998491c95[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Sun Sep 28 00:06:46 2025 +0800
+
+    Added new Image and updated jsj.html
+
+[33mcommit f9311a8e467374b1a4f35fc68208a4c5b31e3b67[m
+Author: jaspersjavierjj <jaspersjavier@gmail.com>
+Date:   Sat Sep 27 20:38:45 2025 +0800
+
+    Initial portfolio commit

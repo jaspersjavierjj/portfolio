@@ -472,62 +472,64 @@
             console.log("🚫 Localhost visit ignored");
         } else {
 
-            if (window.__visitAlreadyTracked) {
-                console.log("⚠️ Visit already tracked");
-                return;
-            }
+        // Prevent duplicate execution
+        if (window.__visitAlreadyTracked) {
+            console.log("⚠️ Visit already tracked");
+        } else {
             window.__visitAlreadyTracked = true;
 
             function getFormattedTimestamp() {
-                return new Date().toLocaleString("en-PH", {
-                    timeZone: "Asia/Manila",
-                    month: "long",
-                    day: "2-digit",
-                    year: "numeric",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    second: "2-digit",
-                    hour12: true
-                });
+            return new Date().toLocaleString("en-PH", {
+                timeZone: "Asia/Manila",
+                month: "long",
+                day: "2-digit",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: true
+            });
             }
 
             const timestamp = getFormattedTimestamp();
 
-            // TOTAL VISIT
-            runTransaction(ref(db, "TotalVisit/total"), (c) => (c || 0) + 1);
+            // 1️⃣ LOG COUNTER (this is your total visits)
+            runTransaction(ref(db, "LogsCounter"), (current) => (current || 0) + 1)
+            .then((result) => {
+                const logNumber = result.snapshot.val();
+                return set(ref(db, `Logs/${logNumber}`), { timestamp });
+            })
+            .then(() => console.log("✅ Log saved"))
+            .catch(console.error);
 
-            // LOG SAVE
-            runTransaction(ref(db, "LogsCounter"), (c) => (c || 0) + 1)
-                .then((result) => {
-                    const logNumber = result.snapshot.val();
-                    return set(ref(db, `Logs/${logNumber}`), { timestamp });
-                });
-
-            // DAILY EMAIL
+            // 2️⃣ DAILY EMAIL (1 per day)
             const today = new Date().toLocaleDateString("en-CA", {
-                timeZone: "Asia/Manila"
+            timeZone: "Asia/Manila"
             });
 
             runTransaction(ref(db, "DailyEmail/lastSentDate"), (current) => {
-                if (current === today) return;
-                return today;
+            if (current === today) return;
+            return today;
             })
             .then((result) => {
-                if (!result.committed) {
-                    console.log("📭 Email already sent today");
-                    return;
-                }
+            if (!result.committed) {
+                console.log("📭 Email already sent today");
+                return;
+            }
 
-                return emailjs.send(
-                    "service_7vps2he",
-                    "template_hgdozt4",
-                    { Time: timestamp }
-                );
+            console.log("📧 Sending daily email...");
+
+            return emailjs.send(
+                "service_7vps2he",
+                "template_hgdozt4",
+                { Time: timestamp }
+            );
             })
             .then((response) => {
-                if (response) console.log("✅ Daily email sent");
+            if (response) console.log("✅ Daily email sent");
             })
             .catch(console.error);
+        }
         }
     </script>
 
