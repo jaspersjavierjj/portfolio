@@ -448,10 +448,10 @@
     </script>
     
     <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import {getDatabase, ref, runTransaction, set} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, runTransaction, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-    const firebaseConfig = {
+        const firebaseConfig = {
         apiKey: "AIzaSyAXwkD0tQwiATETmKfP_7q56kavepCVv-4",
         authDomain: "portfolio-dccce.firebaseapp.com",
         projectId: "portfolio-dccce",
@@ -460,21 +460,21 @@
         appId: "1:969945083392:web:a20cad3ff53d0a82a9f2e5",
         measurementId: "G-XNG41W1T7B",
         databaseURL: "https://portfolio-dccce-default-rtdb.firebaseio.com"
-    };
+        };
 
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
 
-    const isLocalhost =
+        const isLocalhost =
         location.hostname === "localhost" ||
         location.hostname === "127.0.0.1";
 
-    if (isLocalhost) {
+        if (isLocalhost) {
         console.log("🚫 Localhost visit ignored");
-    } else {
+        } else {
 
         function getFormattedTimestamp() {
-        return new Date().toLocaleString("en-US", {
+            return new Date().toLocaleString("en-US", {
             month: "long",
             day: "2-digit",
             year: "numeric",
@@ -482,50 +482,43 @@
             minute: "2-digit",
             second: "2-digit",
             hour12: true
-        });
+            });
         }
 
         const timestamp = getFormattedTimestamp();
 
-        // ===============================
         // 1️⃣ TOTAL VISIT COUNTER
-        // ===============================
         const totalVisitRef = ref(db, "TotalVisit/total");
+        runTransaction(totalVisitRef, (current) => (current || 0) + 1)
+            .then(() => console.log("✅ TotalVisit updated"))
+            .catch(err => console.error("❌ TotalVisit error:", err));
 
-        runTransaction(totalVisitRef, (current) => (current || 0) + 1);
-
-        // ===============================
         // 2️⃣ SEQUENTIAL LOGS
-        // ===============================
         const logCounterRef = ref(db, "LogsCounter");
-
         runTransaction(logCounterRef, (current) => (current || 0) + 1)
-        .then((result) => {
+            .then((result) => {
             const logNumber = result.snapshot.val();
-            return set(ref(db, `Logs/${logNumber}`), {
-            timestamp
-            });
-        });
+            return set(ref(db, `Logs/${logNumber}`), { timestamp });
+            })
+            .then(() => console.log("✅ Log saved"))
+            .catch(err => console.error("❌ Log error:", err));
 
-        // ===============================
-        // TEST EMAIL (NO RESTRICTION)
-        // ===============================
-
+        // 3️⃣ TEST EMAIL
         console.log("📧 Sending test email...");
 
         emailjs.send(
-        "service_7vps2he",
-        "template_b7s2bfe",
-        {
-            Time: timestamp
-        }
+            "service_7vps2he",
+            "template_b7s2bfe",
+            { Time: timestamp }
         )
         .then((response) => {
-        console.log("✅ EmailJS SUCCESS:", response);
+            console.log("✅ EmailJS SUCCESS:", response);
         })
         .catch((error) => {
-        console.error("❌ EmailJS FAILED:", error);
+            console.error("❌ EmailJS FAILED:", error);
         });
+
+        } // ✅ THIS WAS MISSING
     </script>
 
     <script>
