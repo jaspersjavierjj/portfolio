@@ -440,102 +440,116 @@
     <script>
         
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+ 
+    <script>
+        emailjs.init("Ne243AN7Zvfcljwfq");
+    </script>
     
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import {
-    getDatabase,
-    ref,
-    runTransaction,
-    set
-  } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+    <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import {getDatabase, ref, runTransaction, set} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-  // 🔥 Firebase Config
-  const firebaseConfig = {
-    apiKey: "AIzaSyAXwkD0tQwiATETmKfP_7q56kavepCVv-4",
-    authDomain: "portfolio-dccce.firebaseapp.com",
-    projectId: "portfolio-dccce",
-    storageBucket: "portfolio-dccce.firebasestorage.app",
-    messagingSenderId: "969945083392",
-    appId: "1:969945083392:web:a20cad3ff53d0a82a9f2e5",
-    measurementId: "G-XNG41W1T7B",
-    databaseURL: "https://portfolio-dccce-default-rtdb.firebaseio.com"
-  };
+    const firebaseConfig = {
+        apiKey: "AIzaSyAXwkD0tQwiATETmKfP_7q56kavepCVv-4",
+        authDomain: "portfolio-dccce.firebaseapp.com",
+        projectId: "portfolio-dccce",
+        storageBucket: "portfolio-dccce.firebasestorage.app",
+        messagingSenderId: "969945083392",
+        appId: "1:969945083392:web:a20cad3ff53d0a82a9f2e5",
+        measurementId: "G-XNG41W1T7B",
+        databaseURL: "https://portfolio-dccce-default-rtdb.firebaseio.com"
+    };
 
-  // 🔥 Init Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
 
-  // 🚫 Ignore localhost
-  const isLocalhost =
-    location.hostname === "localhost" ||
-    location.hostname === "127.0.0.1";
+    const isLocalhost =
+        location.hostname === "localhost" ||
+        location.hostname === "127.0.0.1";
 
-  if (isLocalhost) {
-    console.log("🚫 Localhost visit ignored");
-  } else {
-    console.log("🌍 Hosted visit detected");
+    if (isLocalhost) {
+        console.log("🚫 Localhost visit ignored");
+    } else {
 
-    // 🕒 Timestamp formatter
-    function getFormattedTimestamp() {
-      const d = new Date();
-      const options = {
-        month: "long",
-        day: "2-digit",
-        year: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true
-      };
-
-      return d
-        .toLocaleString("en-US", options)
-        .replace(",", "")
-        .replace(" ", "_")
-        .replace(/\s/g, "_")
-        .replace(/\//g, "-");
-    }
-
-    // ===============================
-    // 1️⃣ TOTAL VISIT COUNTER
-    // ===============================
-    const totalVisitRef = ref(db, "TotalVisit/total");
-
-    runTransaction(totalVisitRef, (current) => (current || 0) + 1)
-      .then(() => {
-        console.log("✅ TotalVisit updated");
-      })
-      .catch((error) => {
-        console.error("❌ TotalVisit failed:", error);
-      });
-
-    // ===============================
-    // 2️⃣ SEQUENTIAL LOGS (log1, log2…)
-    // ===============================
-    const logCounterRef = ref(db, "LogsCounter");
-
-    runTransaction(logCounterRef, (current) => (current || 0) + 1)
-      .then((result) => {
-        const logNumber = result.snapshot.val(); // 1,2,3...
-        const logKey = `log${logNumber}`;
-
-        const logRef = ref(db, `Logs/${logKey}`);
-
-        return set(logRef, {
-          timestamp: getFormattedTimestamp()
+        function getFormattedTimestamp() {
+        return new Date().toLocaleString("en-US", {
+            month: "long",
+            day: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
         });
-      })
-      .then(() => {
-        console.log("✅ Log saved with sequential key");
-      })
-      .catch((error) => {
-        console.error("❌ Log save failed:", error);
-      });
-  }
-</script>
+        }
 
+        const timestamp = getFormattedTimestamp();
 
+        // ===============================
+        // 1️⃣ TOTAL VISIT COUNTER
+        // ===============================
+        const totalVisitRef = ref(db, "TotalVisit/total");
+
+        runTransaction(totalVisitRef, (current) => (current || 0) + 1);
+
+        // ===============================
+        // 2️⃣ SEQUENTIAL LOGS
+        // ===============================
+        const logCounterRef = ref(db, "LogsCounter");
+
+        runTransaction(logCounterRef, (current) => (current || 0) + 1)
+        .then((result) => {
+            const logNumber = result.snapshot.val();
+            return set(ref(db, `Logs/${logNumber}`), {
+            timestamp
+            });
+        });
+
+        // ===============================
+        // 3️⃣ DAILY FIRST VISIT EMAIL
+        // ===============================
+
+        const today = new Date().toISOString().split("T")[0];
+        const dailyRef = ref(db, "DailyEmail/lastSentDate");
+
+        runTransaction(dailyRef, (currentDate) => {
+        if (currentDate === today) {
+            return; // already sent today
+        }
+        return today; // update date → triggers email
+        })
+        .then((result) => {
+
+        if (!result.committed) {
+            console.log("📭 Email already sent today");
+            return;
+        }
+
+        console.log("📧 First visit today → sending email");
+
+        emailjs.send(
+            "service_7vps2he",
+            "template_b7s2bfe",
+            {
+            Time: timestamp
+            }
+        )
+        .then(() => {
+            console.log("✅ Daily email sent");
+        })
+        .catch((error) => {
+            console.error("❌ Email error:", error);
+        });
+
+        })
+        .catch((error) => {
+        console.error("❌ Daily email transaction failed:", error);
+        });
+
+    }
+    </script>
 
     <script>
         window.addEventListener("scroll", () => {
